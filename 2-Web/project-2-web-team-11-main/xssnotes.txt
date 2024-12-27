@@ -1,0 +1,24 @@
+Notes for future reference, since each attack can be difficult to discern by looking at the url alone
+
+2.0:
+    For this phase, it looks like you can use <script> tags to inject a payload
+    Make sure that the script executes AFTER the page is loaded
+
+2.1:
+    Instead of using a <script> tag, try using a <body> tag with the onload= argument.
+    This in effect does the same thing as our payload, so we don't need any code 
+    checking if the page has already loaded.
+
+    For some reason there are no errors thrown when there are multiple <body> tags on a page?
+
+
+2.2:
+    Use <iframe>. It might have been added after this assignment was written, but it still definitely works
+    with the onload= argument.
+
+2.3:
+    Use <iframe> as your initial attack vector.
+    Additionally, we need to sanitize the payload of all of the replaced characters.
+    For this, we use a LOT of concatenation methods, and a little trick with
+    /regex/ in js to avoid using quotes. This introduces additional slashes into 
+    the url which we need to remove using the .slice() method.

